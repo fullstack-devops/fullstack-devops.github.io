@@ -1,9 +1,9 @@
-name = "Doks"
+name = "FsDevOps"
 license = "MIT"
-licenselink = "https://github.com/h-enk/doks/blob/master/LICENSE"
+licenselink = "https://github.com/fullstack-devops/fullstack-devops/blob/master/LICENSE"
 description = "Hugo theme helping you build modern documentation websites that are secure, fast, and SEO-ready — by default."
 
-homepage = "https://github.com/h-enk/doks"
+homepage = "https://github.com/fullstack-devops"
 demosite = "https://doks.netlify.app"
 
 tags = ["landing page", "documentation", "blog", "minimal", "modern", "customizable", "search", "dark mode", "bootstrap"]

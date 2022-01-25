@@ -1,10 +1,10 @@
 # Meta Data for SEO
 
 ## Homepage
-title = "Doks"
+title = "FsDevOps"
 titleSeparator = "-"
-titleAddition = "Modern Documentation Theme"
-description = "Doks is a Hugo theme for building secure, fast, and SEO-ready documentation websites, which you can easily update and customize."
+titleAddition = "FullStack and DevOps"
+description = "Fullstack development and DevOps very often go hand in hand in some areas. Therefore, it is often the case that everyone can work together on everything and everyone has a sound understanding of how the individual components interact."
 
 ## Documentation
 # docsVersion = "0.3"

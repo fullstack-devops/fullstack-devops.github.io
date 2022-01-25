@@ -7,7 +7,7 @@
     <div class="col-lg-9 col-xl-8 text-center">
       <p class="lead">{{ .Params.lead | safeHTML }}</p>
       <a class="btn btn-primary btn-lg px-4 mb-2" href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}prologue/introduction/" role="button">Get Started</a>
-      <p class="meta">Open-source MIT Licensed. <a href="https://github.com/h-enk/doks">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
+      <!-- <p class="meta">Open-source MIT Licensed. <a href="https://github.com/h-enk/doks">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p> -->
     </div>
   </div>
 </section>
@@ -19,31 +19,34 @@
     <div class="container">
       <div class="row justify-content-center text-center">
         <div class="col-lg-5">
-          <h2 class="h4">Security aware</h2>
-          <p>Get A+ scores on <a href="https://observatory.mozilla.org/analyze/doks.netlify.app">Mozilla Observatory</a> out of the box. Easily change the default Security Headers to suit your needs.</p>
+          <h2 class="h4">Awesome CI</h2>
+          <p>A tool that greatly simplifies your CI workflow! Using SemVer and naming conventions saves a lot of time when creating a release.</p>
+          <a class="btn px-4 mb-4" href="https://github.com/fullstack-devops/awesome-ci" role="button">Check it out</a>
         </div>
         <div class="col-lg-5">
-          <h2 class="h4">Fast by default ⚡️</h2>
-          <p>Get 100 scores on <a href="https://googlechrome.github.io/lighthouse/viewer/?gist=92eaa982d7dbf92f94fe8ecc03987c9a">Google Lighthouse</a> by default. Doks removes unused css, prefetches links, and lazy loads images.</p>
+          <h2 class="h4">Material Calendar</h2>
+          <p>An Angular npm package in material design. Something that was missing from the default angular material library.</p>
+          <a class="btn px-4 mb-4" href="https://github.com/fullstack-devops/material-calendar" role="button">Check it out</a>
         </div>
         <div class="col-lg-5">
-          <h2 class="h4">SEO-ready</h2>
-          <p>Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking.</p>
+          <h2 class="h4">Our Helm Charts</h2>
+          <p>Everything we dockerize and put on kubernetes goes into our central helm chart repo. This makes a deployment and update much easier.</p>
+          <a class="btn px-4 mb-4" href="https://github.com/fullstack-devops/helm-charts" role="button">Check it out</a>
         </div>
       </div>
       <div class="row justify-content-center text-center">
-        <div class="col-lg-5">
+        <!-- <div class="col-lg-5">
           <h2 class="h4">Full text search</h2>
           <p>Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking.</p>
-        </div>
-        <div class="col-lg-5">
+        </div> -->
+        <!-- <div class="col-lg-5">
           <h2 class="h4">Page layouts</h2>
           <p>Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs.</p>
         </div>
         <div class="col-lg-5">
           <h2 class="h4">Dark mode</h2>
           <p>Switch to a low-light UI with the click of a button. Change colors with variables to match your branding.</p>
-        </div>
+        </div> -->
       </div>
     </div>
   </section>
