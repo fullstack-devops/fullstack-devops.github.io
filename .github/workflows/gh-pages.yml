@@ -1,33 +1,32 @@
-name: github pages
+name: Publish docs via GitHub Pages
+
+concurrency: release-docs
 
 on:
+  workflow_dispatch:
   push:
     branches:
-      - main  # Set a branch to deploy
-  pull_request:
+    - 'docs-*'
+    - main
+    paths:
+    - '.github/workflows/docs.yaml'
+    - 'mkdocs.yaml'
+    - 'docs/**'
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.fork == false
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - uses: actions/setup-node@v2
-        with:
-          node-version: '14'
-
-      - name: Install dependencies
-        run: yarn
-
-      - name: Build
-        run: yarn run build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.event_name != 'pull_request'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          python-version: 3.x
+      - name: Configure Git
+        run: |
+          git config user.name "fullstack-devops[bot]"
+          git config user.email "fullstack-devops[bot]@users.noreply.github.com"
+      - run: |
+          pip install -r requirements.txt
+      - run: mkdocs gh-deploy --config-file ./mkdocs.yaml --force
