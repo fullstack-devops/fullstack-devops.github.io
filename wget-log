@@ -1,0 +1,12 @@
+--2022-08-30 18:28:27--  https://avatars.githubusercontent.com/u/97617148?s=200
+CA-Zertifikat »/etc/ssl/certs/ca-certificates.crt« wurde geladen
+Auflösen des Hostnamens avatars.githubusercontent.com (avatars.githubusercontent.com)… 185.199.110.133, 185.199.108.133, 185.199.109.133, ...
+Verbindungsaufbau zu avatars.githubusercontent.com (avatars.githubusercontent.com)|185.199.110.133|:443 … verbunden.
+HTTP-Anforderung gesendet, auf Antwort wird gewartet … 200 OK
+Länge: 13978 (14K) [image/png]
+Wird in »97617148?s=200« gespeichert.
+
+97617148?s=200                   0%[                                                     ]       0  --.-KB/s               97617148?s=200                 100%[====================================================>]  13,65K  --.-KB/s    in 0,005s  
+
+2022-08-30 18:28:27 (2,71 MB/s) - »97617148?s=200« gespeichert [13978/13978]
+
