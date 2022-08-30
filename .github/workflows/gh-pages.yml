@@ -29,4 +29,4 @@ jobs:
           git config user.email "fullstack-devops[bot]@users.noreply.github.com"
       - run: |
           pip install -r requirements.txt
-      - run: mkdocs gh-deploy --config-file ./mkdocs.yaml --force
+      - run: mkdocs gh-deploy --config-file ./mkdocs.yml --force
