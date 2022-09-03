@@ -1,0 +1,6 @@
+[submodule "docs/repos/helm-charts"]
+	path = docs/repos/helm-charts
+	url = git@github.com:fullstack-devops/helm-charts.git
+[submodule "docs/repos/github-actions-runner"]
+	path = docs/repos/github-actions-runner
+	url = git@github.com:fullstack-devops/github-actions-runner.git

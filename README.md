@@ -1,20 +1,17 @@
-# Docs for fullstack-devops.github.io
+[![Publish docs via GitHub Pages](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/gh-pages.yml)
 
-s
-## Run local
+# Docs for fullstack-devops
+
+Documentation about everything in this organization.
+
+## Dev
 
 ### Installation
 
-install `mkdocs` if not aready done
+install `mkdocs-material` and requirements, if not aready done
 
 ```bash
-pip install mkdocs
-```
-
-install all required plugins
-
-```bash
-python3 setup.py
+pip install -r requirements.txt
 ```
 
 run and watch deployment
@@ -22,3 +19,9 @@ run and watch deployment
 ```bash
 mkdocs serve
 ```
+
+### Git Submodules
+
+How to add: `git submodule add <repo_clone_url>`
+
+How to get an update: `git pull --recurse-submodules`

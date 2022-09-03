@@ -1,6 +1,6 @@
 # Project information
-site_name: Docs for fullstack-devops
-site_url: https://fullstack-devops.github.io/
+site_name: Docs for Fullstack and DevOps
+site_url: ""
 site_author: The fullstack-devops project
 site_description: >-
   Documentation for the fullstack-devops community and side projects
@@ -8,7 +8,7 @@ site_description: >-
 # Repository
 repo_name: fullstack-devops/fullstack-devops.github.io
 repo_url: https://github.com/fullstack-devops/fullstack-devops.github.io
-edit_uri: ""
+edit_uri: "edit/main/docs"
 
 # Configuration
 theme:
@@ -28,7 +28,7 @@ theme:
     # - content.tabs.link
     - content.tooltips
     # - header.autohide
-    # - navigation.expand
+    - navigation.expand
     - navigation.indexes
     # - navigation.instant
     # - navigation.prune
@@ -60,20 +60,18 @@ theme:
     code: Roboto Mono
   favicon: https://avatars.githubusercontent.com/u/97617148?s=200&v=4
   logo: https://avatars.githubusercontent.com/u/97617148?s=200&v=4
+extra_css:
+  - stylesheets/custom.css
 
 docs_dir: ./docs
-
-extra_css:
-  - _static/custom.css
 
 # Plugins
 plugins:
   - search
   - minify:
       minify_html: true
-  - redirects:
-      redirect_maps:
-        helm-charts/getting-started.md: helm-charts/introduction.md
+  - git-revision-date-localized:
+      enable_creation_date: true
 
 # Customization
 extra:
@@ -112,11 +110,10 @@ markdown_extensions:
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.snippets:
+      # Fails the build if any imports are missing
+      check_paths: true
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.tasklist:
@@ -126,35 +123,11 @@ markdown_extensions:
 # Page tree
 nav:
   - Home: index.md
-  # - Helm Charts:
-  #     - Introduction: helm-charts/introduction.md
-  #     - Common: helm-charts/common-library.md
-  #     - Common Storage: helm-charts/common-library-storage.md
-  #     - Common Add-ons: helm-charts/common-library-add-ons.md
-  #     - Development:
-  #         - Creating a new chart: helm-charts/development/creating-a-new-chart.md
-  #         - Databases: our-helm-charts/development/databases.md
-  #         - Unit tests: our-helm-charts/development/unit-tests.md
-  # - Our Container Images:
-  #     - Introduction: our-container-images/introduction.md
-  #     - Configuration: our-container-images/configuration.md
-  #     - Permissions: our-container-images/permissions.md
-  #     - Development:
-  #         - Creating a new container image: >-
-  #             our-container-images/development/creating-a-new-container-image.md
-  #         - Dockerfile: our-container-images/development/dockerfile.md
-  #         - Base images: our-container-images/development/base-images.md
-  #         - Build: our-container-images/development/build.md
-  # - Our Code Projects:
-  #     - Introduction: our-own-code-projects/introduction.md
-  #     - Development:
-  #         - Creating a new project: >-
-  #             our-own-code-projects/development/creating-a-new-container-image.md
-  # - Guides:
-  #     - DynDNS with a CronJob: guides/dyndns.md
-  #     - Routing traffic through a VPN pod: guides/pod-gateway.md
-  #     - Updating Sonarr/Radarr with Recyclarr: guides/recyclarr.md
-  # - Support:
-  #     - Community: support/community.md
-  #     - FAQ: support/faq.md
-  #     - Code of Conduct: support/code-of-conduct.md
+  - Repositories:
+      - repos/index.md
+      - helm charts:
+          - repos/helm-charts/README.md
+          - excalidraw: repos/helm-charts/charts/excalidraw/README.md
+          - github-actions-runner: repos/helm-charts/charts/github-actions-runner/README.md
+      - github actions runner:
+        - repos/github-actions-runner/README.md
