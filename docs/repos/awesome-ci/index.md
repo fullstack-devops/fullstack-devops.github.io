@@ -28,8 +28,15 @@ The patching of the version only takes effect if the merged branch begins with t
 
 > see also [override specialties](#override-specialties)
 
-![awesome-ci release process](release-process.drawio.svg "awesome-ci release process")
-![awesome-ci workflow](aci-workflow.drawio.png "awesome-ci workflow")
+```mermaid
+graph LR
+    A(default branch) -- create branch --> B(push to GitHub)
+    B -- opens PullRequest --> C(open PR)
+    C --> D{review}
+```
+
+![awesome-ci release process](images/release-process.drawio.svg "awesome-ci release process")
+![awesome-ci workflow](images/aci-workflow.drawio.png "awesome-ci workflow")
 
 > Hint: this tool automatically detects your environment. Supported are **Jenkins**, **GitHub Actions** and ~~GitLab CI~~
 
