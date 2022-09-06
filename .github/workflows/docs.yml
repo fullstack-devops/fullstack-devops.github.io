@@ -9,7 +9,7 @@ on:
     - 'docs-*'
     - main
     paths:
-    - '.github/workflows/docs.yaml'
+    - '.github/workflows/docs.yml'
     - 'mkdocs.yaml'
     - 'docs/**'
 
@@ -20,6 +20,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
