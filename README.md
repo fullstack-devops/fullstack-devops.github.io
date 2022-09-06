@@ -1,4 +1,4 @@
-[![Publish docs via GitHub Pages](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/gh-pages.yml)
+[![Publish docs via GitHub Pages](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/docs.yml/badge.svg)](https://github.com/fullstack-devops/fullstack-devops.github.io/actions/workflows/docs.yml)
 
 # Docs for fullstack-devops
 

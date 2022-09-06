@@ -1,7 +1,7 @@
 # Project information
-site_name: Docs for Fullstack and DevOps
+site_name: Fullstack applications and DevOps solutions
 site_url: ""
-site_author: The fullstack-devops project
+site_author: The fullstack-devops orga
 site_description: >-
   Documentation for the fullstack-devops community and side projects
 
@@ -44,14 +44,14 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indigo
-      accent: indigo
+      primary: fsdevops
+      accent: fsdevops
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
     - scheme: slate
-      primary: indigo
-      accent: indigo
+      primary: fsdevops
+      accent: fsdevops
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
