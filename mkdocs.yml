@@ -132,3 +132,13 @@ nav:
           - github-actions-runner: repos/helm-charts/charts/github-actions-runner/README.md
       - github actions runner:
         - repos/github-actions-runner/README.md
+      - awesome-ci:
+        - repos/awesome-ci/index.md
+        - commands:
+          - repos/awesome-ci/commands/index.md
+          - pr: repos/awesome-ci/commands/pr.md
+          - release: repos/awesome-ci/commands/release.md
+        - examples:
+          - repos/awesome-ci/examples/index.md
+          - GitHub Actions: repos/awesome-ci/examples/github_actions.md
+
