@@ -1,4 +1,7 @@
 contact_links:
-  - name: Question 🙋
+  - name: Question :raising_hand_woman:
     url: https://github.com/h-enk/doks/discussions/categories/q-a
-    about: Ask your question in Doks Discussions
+    about: Ask your question in Fs-DevOps Discussions
+  - name: Ideas :thinking:
+    url: https://github.com/orgs/fullstack-devops/discussions/categories/q-a
+    about: Share your ideas in Fs-DevOps Discussions
