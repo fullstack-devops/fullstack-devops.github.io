@@ -4,6 +4,10 @@ concurrency: release-docs
 
 on:
   workflow_dispatch:
+  workflow_run:
+    workflows: ["Synchronize submodules"]
+    types:
+      - completed
   push:
     branches:
     - 'docs-*'

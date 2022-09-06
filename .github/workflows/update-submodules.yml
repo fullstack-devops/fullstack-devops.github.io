@@ -1,0 +1,24 @@
+name: Synchronize submodules
+
+concurrency: update-submodules
+
+on:
+  repository_dispatch:
+    types: [update-submodules]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: "recursive"
+      - name: Sync submodules and commit
+        run: |
+          git config user.name "fullstack-devops[bot]"
+          git config user.email "fullstack-devops[bot]@users.noreply.github.com"
+          git pull --recurse-submodules
+          git status
+          git commit -a -m "submodules synchronized"
+          git push
