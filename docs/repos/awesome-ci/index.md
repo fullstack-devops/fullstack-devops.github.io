@@ -8,17 +8,18 @@ If more functionality is needed you can just open a problem in this project and 
 
 If you have any questions, you can find a form on the issue board. First, make sure your question is already in the Questions and Answers section before asking a question. You can find frequently asked questions directly in the "Questions and Answers" section.
 
-### Notice:
+!!! info
 
-Every command that you can use is in the sidebar under commands. All options are listed there.
-
-If you need an example for your pipeline you can find it in the sidebar under the tab examples.
+    Every command that you can use is in the sidebar under commands. All options are listed there.
+    If you need an example for your pipeline you can find it in the sidebar under the tab examples.
 
 ### Supported naming rules and effects on the version
 
 The patching of the version only takes effect if the merged branch begins with the following aliases, for example: `feature/my-awesome-feature`
 
-> The tailing `/` behind the alias is **always** requiered!
+!!! note
+
+    The tailing `/` behind the alias is **always** requiered!
 
 | SemVer | supported aliases             | version example |
 | ------ | ----------------------------- | --------------- |
@@ -26,19 +27,19 @@ The patching of the version only takes effect if the merged branch begins with t
 | MINOR  | `feature`, `feat`             | 1.2.3 => 1.3.0  |
 | PATCH  | `fix`, `bugfix`, `dependabot` | 1.2.3 => 1.2.4  |
 
-> see also [override specialties](#override-specialties)
+!!! tldr "good to know"
 
-```mermaid
-graph LR
-    A(default branch) -- create branch --> B(push to GitHub)
-    B -- opens PullRequest --> C(open PR)
-    C --> D{review}
-```
+    see also [override specialties](#override-specialties)
+
+### awesome ci in your git workflow
 
 ![awesome-ci release process](images/release-process.drawio.svg "awesome-ci release process")
+
 ![awesome-ci workflow](images/aci-workflow.drawio.png "awesome-ci workflow")
 
-> Hint: this tool automatically detects your environment. Supported are **Jenkins**, **GitHub Actions** and ~~GitLab CI~~
+!!! info
+
+    This tool automatically detects your environment. Supported are **Jenkins**, **GitHub Actions** and ~~GitLab CI~~
 
 ### Override specialties
 
@@ -66,4 +67,6 @@ List of all environmental variables used per CI tool.
 | `GITHUB_TOKEN`            | Must provided in pipeline as `env.GITHUB_TOKEN` (see examples) |   true    |
 | `GIT_DEFAULT_BRANCH_NAME` | overrides the default branch name (default: `main`)            |   false   |
 
-> To see your Jenkins environment variables go to: `${YOUR_JENKINS_HOST}/env-vars.html`
+!!! info
+
+    To see your Jenkins environment variables go to: `${YOUR_JENKINS_HOST}/env-vars.html`
