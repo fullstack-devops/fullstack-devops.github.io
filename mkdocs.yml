@@ -44,7 +44,7 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: fsdevops
+      primary: indego
       accent: fsdevops
       toggle:
         icon: material/brightness-7
@@ -59,7 +59,7 @@ theme:
     text: Roboto
     code: Roboto Mono
   favicon: https://avatars.githubusercontent.com/u/97617148?s=200&v=4
-  logo: https://avatars.githubusercontent.com/u/97617148?s=200&v=4
+  logo: assets/full-logo.png
 extra_css:
   - stylesheets/custom.css
 
@@ -135,14 +135,13 @@ nav:
           - excalidraw: repos/helm-charts/charts/excalidraw/README.md
           - github-actions-runner: repos/helm-charts/charts/github-actions-runner/README.md
       - github actions runner:
-        - repos/github-actions-runner/README.md
+          - repos/github-actions-runner/README.md
       - awesome-ci:
-        - repos/awesome-ci/index.md
-        - commands:
-          - repos/awesome-ci/commands/index.md
-          - pr: repos/awesome-ci/commands/pr.md
-          - release: repos/awesome-ci/commands/release.md
-        - examples:
-          - repos/awesome-ci/examples/index.md
-          - GitHub Actions: repos/awesome-ci/examples/github_actions.md
-
+          - repos/awesome-ci/index.md
+          - commands:
+              - repos/awesome-ci/commands/index.md
+              - pr: repos/awesome-ci/commands/pr.md
+              - release: repos/awesome-ci/commands/release.md
+          - examples:
+              - repos/awesome-ci/examples/index.md
+              - GitHub Actions: repos/awesome-ci/examples/github_actions.md

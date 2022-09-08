@@ -1,4 +1,8 @@
 {
+    "workbench.editorAssociations": {
+        "*.draw.svg": "hediet.vscode-drawio-text",
+        "*.draw.png": "hediet.vscode-drawio-text",
+    },
     "yaml.schemas": {
         "https://squidfunk.github.io/mkdocs-material/schema.json": "mkdocs.yml"
     }
