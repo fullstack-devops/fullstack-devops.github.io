@@ -44,7 +44,7 @@ theme:
     # - toc.integrate
   palette:
     - scheme: default
-      primary: indego
+      primary: fsdevops
       accent: fsdevops
       toggle:
         icon: material/brightness-7

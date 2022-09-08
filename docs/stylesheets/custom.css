@@ -2,6 +2,11 @@
   max-width: 75rem;
 }
 
+.md-header__button.md-logo {
+  background: var(--md-code-bg-color);
+  border-radius: 8px;
+}
+
 [data-md-color-primary="fsdevops"] {
   --md-primary-fg-color: #4c7c3c;
   --md-primary-fg-color--light: #c9d8c5;
