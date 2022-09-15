@@ -1,0 +1,26 @@
+name: Build docs and test
+
+on:
+  pull_request:
+    branches:
+    - main
+
+jobs:
+  build_pull_request:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.fork == false
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          submodules: 'recursive'
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - name: Configure Git
+        run: |
+          git config user.name "fullstack-devops[bot]"
+          git config user.email "fullstack-devops[bot]@users.noreply.github.com"
+      - run: |
+          pip install -r requirements.txt
+      - run: mkdocs build
