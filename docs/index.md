@@ -1,6 +1,7 @@
-# Welcome
+---
+template: home.html
 
-Welcome to the official documentation/ blog for [fullstack-devops](https://github.com/fullstack-devops)
+---
 
 
 ### What to expect?

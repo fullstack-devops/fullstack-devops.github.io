@@ -13,6 +13,7 @@ edit_uri: "edit/main/docs"
 # Configuration
 theme:
   name: material
+  custom_dir: docs/overrides
 
   # Static files
   static_templates:
@@ -61,7 +62,8 @@ theme:
   favicon: https://avatars.githubusercontent.com/u/97617148?s=200&v=4
   logo: assets/full-logo.png
 extra_css:
-  - stylesheets/custom.css
+  - overrides/custom.css
+  - overrides/home.css
 
 docs_dir: ./docs
 use_directory_urls: false
