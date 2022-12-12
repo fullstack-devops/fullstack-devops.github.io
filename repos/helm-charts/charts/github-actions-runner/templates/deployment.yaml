@@ -1,0 +1,115 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "github-actions-runner.fullname" . }}
+  labels:
+    {{- include "github-actions-runner.labels" . | nindent 4 }}
+spec:
+  {{- if not .Values.autoscaling.enabled }}
+  replicas: {{ .Values.replicaCount }}
+  {{- end }}
+  selector:
+    matchLabels:
+      {{- include "github-actions-runner.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "github-actions-runner.selectorLabels" . | nindent 8 }}
+    spec:
+      volumes:
+        {{- if .Values.runner.kaniko.mountedSecret }}
+        - name: pull-secret
+          secret:
+            secretName: "{{ .Values.runner.kaniko.mountedSecret }}"
+            items:
+              - key: .dockerconfigjson
+                path: config.json
+            defaultMode: 420
+        {{- end }}
+        {{- if .Values.runner.kaniko.enabled }}
+        - name: workspace-volume
+          emptyDir: {}
+        {{- end }}
+        {{- if .Values.runner.customCerts.configMapRef }}
+        - name: ca-certificates-crt
+          configMap: 
+            name: "{{ .Values.runner.customCerts.configMapRef }}"
+        {{- end }}
+        - name: config-files
+          configMap:
+            name: {{ .Release.Name }}-configmap-files
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "github-actions-runner.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        {{- if .Values.runner.kaniko.enabled }}
+        - name: {{ .Chart.Name }}-kaniko
+          securityContext:
+            runAsUser: 0
+            readOnlyRootFilesystem: false
+          image: {{ include "github-actions-runner.runner-image-kaniko" . }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          volumeMounts:
+            - name: workspace-volume
+              mountPath: /kaniko/workspace/
+            {{- if .Values.runner.customCerts.configMapRef }}
+            - name: ca-certificates-crt
+              mountPath: /kaniko/ssl/certs/
+            {{- end }}
+            {{- if .Values.runner.kaniko.mountedSecret }}
+            - name: pull-secret
+              readOnly: true
+              mountPath: /kaniko/.docker
+            {{- end }}
+          imagePullPolicy: IfNotPresent
+        {{- end }}
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: {{ include "github-actions-runner.runner-image" . }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          volumeMounts:
+            {{- if .Values.runner.customCerts.configMapRef }}
+            - name: ca-certificates-crt
+              mountPath: /etc/ssl/certs/
+            {{- end }}
+            {{- if .Values.runner.kaniko.enabled }}
+            - name: workspace-volume
+              mountPath: /kaniko/workspace/
+            {{- end }}
+            - name: config-files
+              mountPath: "/mnt/dynamic"
+              readOnly: true
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+          env:
+          {{- range $key, $val := .Values.runner.env }}
+            - name: {{ $key }}
+              value: {{ $val | quote }}
+          {{- end }}
+          envFrom:
+            - secretRef:
+                name: {{ .Release.Name }}-secret
+            - configMapRef:
+                name: {{ .Release.Name }}-configmap-env
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
