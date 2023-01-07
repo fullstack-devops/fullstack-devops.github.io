@@ -26,8 +26,11 @@ theme:
   features:
     # - announce.dismiss
     - content.code.annotate
+    - content.code.copy
     - content.tabs.link
     - content.tooltips
+    - content.action.edit
+    - content.action.view
     # - header.autohide
     # - navigation.expand
     - navigation.indexes
