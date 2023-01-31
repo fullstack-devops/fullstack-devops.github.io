@@ -1,6 +1,6 @@
 mkdocs==1.4.2
 mkdocs-macros-plugin==0.7.0
-mkdocs-material==9.0.6
+mkdocs-material==9.0.9
 mkdocs-minify-plugin==0.6.2
 mkdocs-git-revision-date-localized-plugin==1.1.0
 mkdocs-snippet-plugin==1.0.2
