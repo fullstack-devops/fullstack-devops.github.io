@@ -1,8 +1,4 @@
-[submodule "docs/repos/github-actions-runner"]
-	path = docs/repos/github-actions-runner
-	url = https://github.com/fullstack-devops/github-actions-runner.git
-    branch = main
-[submodule "docs/repos/helm-charts"]
-	path = docs/repos/helm-charts
-	url = https://github.com/fullstack-devops/helm-charts.git
-    branch = main
+[submodule "modules/ng-mat-components"]
+	path = modules/ng-mat-components
+	url = https://github.com/fullstack-devops/ng-mat-components.git
+	branch = bugfix/init-docs

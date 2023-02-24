@@ -9,24 +9,12 @@ const config = {
   title: "FS DevOps",
   tagline: "Fullstack applications and DevOps solutions",
   favicon: "https://avatars.githubusercontent.com/u/97617148?s=200&v=4",
-
-  // Set the production url of your site here
   url: "https://fullstack-devops.github.io",
-  // Set the /<baseUrl>/ pathname under which your site is served
-  // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
   organizationName: "fullstack-devops", // Usually your GitHub org/user name.
   projectName: "fullstack-devops.github.io", // Usually your repo name.
-
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: "en",
     locales: ["en"],
@@ -39,15 +27,11 @@ const config = {
       ({
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/fullstack-devops/fullstack-devops.github.io/tree/main/",
         },
         blog: {
           showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
           editUrl:
             "https://github.com/fullstack-devops/fullstack-devops.github.io/tree/main/",
         },
@@ -58,12 +42,26 @@ const config = {
     ],
   ],
 
-  plugins: [require.resolve("docusaurus-lunr-search")],
+  plugins: [
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "ng-mat-components",
+        path: "modules/ng-mat-components/docs",
+        routeBasePath: "ng-mat-components",
+        sidebarPath: require.resolve(
+          "./modules/ng-mat-components/docs/sidebars.js"
+        ),
+        editUrl:
+          "https://github.com/fullstack-devops/ng-mat-components/tree/main/",
+      },
+    ],
+    require.resolve("docusaurus-lunr-search"),
+  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
-      // Replace with your project's social card
       image: "img/full-logo.png",
       navbar: {
         title: "FS DevOps",
@@ -80,8 +78,8 @@ const config = {
           },
           /* { to: "/blog", label: "Blog", position: "left" }, */
           {
-            type: 'search',
-            position: 'right',
+            type: "search",
+            position: "right",
           },
           {
             href: "https://github.com/fullstack-devops",
