@@ -1,4 +1,3 @@
 [submodule "modules/ng-mat-components"]
 	path = modules/ng-mat-components
 	url = https://github.com/fullstack-devops/ng-mat-components.git
-	branch = bugfix/init-docs
