@@ -1,0 +1,6 @@
+label: "K8s helm charts"
+collapsible: true
+collapsed: true
+link:
+  type: generated-index
+  title: K8s helm charts

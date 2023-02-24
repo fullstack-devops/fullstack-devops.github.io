@@ -2,3 +2,11 @@
 	path = modules/ng-mat-components
 	url = https://github.com/fullstack-devops/ng-mat-components.git
 	branch = bugfix/init-docs
+[submodule "modules/awesome-ci"]
+	path = modules/awesome-ci
+	url = https://github.com/fullstack-devops/awesome-ci.git
+	branch = main
+[submodule "modules/helm-charts"]
+	path = modules/helm-charts
+	url = https://github.com/fullstack-devops/helm-charts.git
+	branch = main
