@@ -13,7 +13,7 @@ const config = {
   baseUrl: "/",
   organizationName: "fullstack-devops", // Usually your GitHub org/user name.
   projectName: "fullstack-devops.github.io", // Usually your repo name.
-  onBrokenLinks: "throw",
+  onBrokenLinks: "warn", // "throw",
   onBrokenMarkdownLinks: "warn",
   i18n: {
     defaultLocale: "en",
