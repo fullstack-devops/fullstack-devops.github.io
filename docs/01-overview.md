@@ -1,5 +1,5 @@
 ---
-sidebar_position: 1
+title: What to expect?
 ---
 
 # What to expect?

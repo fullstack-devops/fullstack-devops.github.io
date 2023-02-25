@@ -1,6 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const fs = require("node:fs");
 const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
@@ -26,7 +27,8 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
+          path: fs.realpathSync("docs"),
+          sidebarPath: fs.realpathSync("./sidebars.js"),
           editUrl:
             "https://github.com/fullstack-devops/fullstack-devops.github.io/tree/main/",
         },
@@ -42,22 +44,7 @@ const config = {
     ],
   ],
 
-  plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "ng-mat-components",
-        path: "modules/ng-mat-components/docs",
-        routeBasePath: "ng-mat-components",
-        sidebarPath: require.resolve(
-          "./modules/ng-mat-components/docs/sidebars.js"
-        ),
-        editUrl:
-          "https://github.com/fullstack-devops/ng-mat-components/tree/main/",
-      },
-    ],
-    require.resolve("docusaurus-lunr-search"),
-  ],
+  plugins: [require.resolve("docusaurus-lunr-search")],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
