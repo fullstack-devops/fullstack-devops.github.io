@@ -7410,10 +7410,10 @@ svgo@^2.7.0, svgo@^2.8.0:
     picocolors "^1.0.0"
     stable "^0.1.8"
 
-sync-directory@^6.0.2:
-  version "6.0.2"
-  resolved "https://registry.yarnpkg.com/sync-directory/-/sync-directory-6.0.2.tgz#9ae66092ed9ee1ce2d7701c27595d3ef6cbaa344"
-  integrity sha512-cW8QEKdU8Dt02JzHXUXDwTkknsA8FME/iqpbXfhYEZSnHtW83pPjgK+w4OJl5Ji8shiyM436OG3YCJXr67ZZDg==
+sync-directory@^6.0.3:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/sync-directory/-/sync-directory-6.0.3.tgz#3c2ca1f66e0e22dbbf81405bad5a087191d9bd12"
+  integrity sha512-kXtl4CHAjZZlOPTKXU9J6JsBesPK+s6IV9Hgffj0RWp3FRmLEJmnM+4dQaYoaKOyRT3Ty0ijD6x7UHsaeVJgBg==
   dependencies:
     chokidar "^3.3.1"
     commander "^6.2.0"
